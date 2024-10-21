@@ -888,22 +888,22 @@ function preload() {
 
 	sounds = {
 		bgs : {
-			// mainMenu: loadSound("/assets/sounds/bgs/main menu.mp3"),
-			// onboarding: loadSound("/assets/sounds/bgs/onboarding.mp3"),
-			// game: loadSound("/assets/sounds/bgs/game.mp3"),
+			// mainMenu: loadSound(location.href + "/assets/sounds/bgs/main menu.mp3"),
+			// onboarding: loadSound(location.href + "/assets/sounds/bgs/onboarding.mp3"),
+			// game: loadSound(location.href + "/assets/sounds/bgs/game.mp3"),
 		},
 		transitions: {
-			slash: loadSound("/assets/sounds/transitions/slash.mp3")
+			slash: loadSound(location.href + "/assets/sounds/transitions/slash.mp3")
 		},
-		pointScored: loadSound("/assets/sounds/point scored.mp3"),
-		liveLost: loadSound("/assets/sounds/live lost.mp3"),
-		gameOver: loadSound("/assets/sounds/game over.mp3")
+		pointScored: loadSound(location.href + "/assets/sounds/point scored.mp3"),
+		liveLost: loadSound(location.href + "/assets/sounds/live lost.mp3"),
+		gameOver: loadSound(location.href + "/assets/sounds/game over.mp3")
 	}
 
 	images = {
 		bgs: {
-			mainMenu: loadImage("/assets/images/bgs/mainMenu.jpg"),
-			sky: loadImage("/assets/images/bgs/sky.png")
+			mainMenu: loadImage(location.href + "/assets/images/bgs/mainMenu.jpg"),
+			sky: loadImage(location.href + "/assets/images/bgs/sky.png")
 		},
 		transitions: {
 			slash: {
@@ -911,13 +911,13 @@ function preload() {
 				drawEveryNthFrame: 1,
 			}
 		},
-		resetPopup: loadImage("/assets/images/resetPopup.png"),
-		resetDonePopup: loadImage("/assets/images/resetDonePopup.png")
+		resetPopup: loadImage(location.href + "/assets/images/resetPopup.png"),
+		resetDonePopup: loadImage(location.href + "/assets/images/resetDonePopup.png")
 		// health (lives), score, poses (for calibration / onboarding), etc
 	}
 
 	for (let i = 1; i <= 17; i++) {
-		images.transitions.slash.masks.push(loadImage(`/assets/images/transitions/slash/${i}.png`))
+		images.transitions.slash.masks.push(loadImage(location.href + `/assets/images/transitions/slash/${i}.png`))
 	}
 }
 
