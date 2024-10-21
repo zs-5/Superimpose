@@ -11,9 +11,14 @@ Gameplay screenshots of incorrect and correct (matching) poses:
 
 ## How to play
 
-1. Clone this repo
-2. Serve the files. You can use an extension like Live Server or other libraries, or use http-server with
+Online demo: <https://zs-5.github.io/Superimpose>
+
+Alternatively:
+1. Clone this repo.
+2. Serve the files. You can use an extension like Live Server or other libraries, or use http-server simply with
 	```bash
 	> npm i
 	> npm start
 	```
+
+Note: (Unfortunately) Chromium based browsers are recommended for optimal performance.
