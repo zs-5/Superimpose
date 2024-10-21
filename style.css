@@ -1,0 +1,115 @@
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	background-color: black;
+}
+
+main:has(> .p5Canvas) {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.p5Canvas {
+	display: block;
+	width: 100% !important;
+	height: unset !important;
+}
+
+#loading-element {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 1;
+	transition: all 5s;
+	z-index: 10;
+	text-align: center;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* Code below is modified and structured very differently, but is ultimately based on https://codepen.io/jkantner/pen/mdKOpbe, for infinite-preloader animation*/
+
+#loading-element {
+	--hue: 223;
+	--bg: hsl(var(--hue),90%,5%);
+	--fg: hsl(var(--hue),90%,95%);
+	--trans-dur: 0.3s;
+
+	background-color: var(--bg);
+	color: var(--fg);
+	font: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320))/1.5 sans-serif;
+	transition: background-color var(--trans-dur);
+}
+
+#infinite-preloader {
+	
+	padding: 1.5em 0;
+
+	* {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.ip {
+		width: 16em;
+		height: 8em;
+	}
+
+	.ip__track {
+		stroke: hsl(var(--hue),90%,15%);
+		transition: stroke var(--trans-dur);
+	}
+
+	.ip__worm1,
+	.ip__worm2 {
+		animation: worm1 2s linear infinite;
+	}
+
+	.ip__worm2 {
+		animation-name: worm2;
+	}
+}
+
+@keyframes worm1 {
+	from {
+		stroke-dashoffset: 0;
+	}
+	50% {
+		animation-timing-function: steps(1);
+		stroke-dashoffset: -358;
+	}
+	50.01% {
+		animation-timing-function: linear;
+		stroke-dashoffset: 358;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes worm2 {
+	from {
+		stroke-dashoffset: 358;
+	}
+	50% {
+		stroke-dashoffset: 0;
+	}
+	to {
+		stroke-dashoffset: -358;
+	}
+}
